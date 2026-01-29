@@ -2,87 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design System - Site Données & Économie Numérique */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Backgrounds */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
+    /* Cards */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Bleu cyan */
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent */
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* Custom colors */
+    --hero-bg: 222 47% 11%;
+    --hero-bg-gradient: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(217 33% 17%) 100%);
+    --section-dark-bg: 217 33% 17%;
+    --section-light-bg: 210 40% 98%;
+    
+    /* Accent colors for icons */
+    --icon-blue: 199 89% 48%;
+    --icon-cyan: 187 85% 53%;
+    --icon-pink: 330 81% 60%;
+    --icon-orange: 25 95% 53%;
+    --icon-green: 160 84% 39%;
+    --icon-purple: 271 81% 56%;
+    --icon-yellow: 45 93% 47%;
+
+    /* Gradients */
+    --gradient-pink-purple: linear-gradient(135deg, hsl(330 81% 60%) 0%, hsl(271 81% 56%) 100%);
+    --gradient-blue-cyan: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(187 85% 53%) 100%);
+    --gradient-orange-yellow: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(45 93% 47%) 100%);
+    --gradient-green-cyan: linear-gradient(135deg, hsl(160 84% 39%) 0%, hsl(187 85% 53%) 100%);
+    --gradient-purple-blue: linear-gradient(135deg, hsl(271 81% 56%) 0%, hsl(199 89% 48%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(258 72% 35%) 0%, hsl(222 47% 11%) 100%);
+
+    /* Sidebar (keeping defaults) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 217 33% 17%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 217 33% 17%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +125,106 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero section styling */
+  .hero-section {
+    background: var(--hero-bg-gradient);
+  }
+
+  .hero-title-accent {
+    @apply text-primary;
+  }
+
+  /* Feature cards */
+  .feature-card {
+    @apply bg-card rounded-xl border border-border p-6 transition-all duration-300;
+    @apply hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Icon containers with gradients */
+  .icon-container {
+    @apply w-14 h-14 rounded-xl flex items-center justify-center;
+  }
+
+  .icon-blue {
+    @apply bg-primary/10;
+    color: hsl(var(--icon-blue));
+  }
+
+  .icon-pink {
+    background: linear-gradient(135deg, hsl(330 81% 95%) 0%, hsl(271 81% 95%) 100%);
+    color: hsl(var(--icon-pink));
+  }
+
+  .icon-cyan {
+    background: hsl(187 85% 93%);
+    color: hsl(var(--icon-cyan));
+  }
+
+  .icon-orange {
+    background: linear-gradient(135deg, hsl(25 95% 93%) 0%, hsl(45 93% 93%) 100%);
+    color: hsl(var(--icon-orange));
+  }
+
+  .icon-green {
+    background: hsl(160 84% 92%);
+    color: hsl(var(--icon-green));
+  }
+
+  .icon-purple {
+    background: hsl(271 81% 93%);
+    color: hsl(var(--icon-purple));
+  }
+
+  /* Dark section cards */
+  .dark-card {
+    @apply bg-card/50 backdrop-blur-sm rounded-xl border border-border/30 p-6;
+    @apply transition-all duration-300 hover:bg-card/70;
+  }
+
+  /* Info banner */
+  .info-banner {
+    @apply bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center;
+  }
+
+  /* Challenge banner gradient */
+  .challenge-banner {
+    background: var(--gradient-hero);
+    @apply rounded-xl p-8;
+  }
+
+  /* Section backgrounds */
+  .section-dark {
+    background: linear-gradient(180deg, hsl(217 33% 12%) 0%, hsl(222 47% 11%) 100%);
+  }
+
+  .section-light {
+    @apply bg-background;
+  }
+
+  /* Example cards */
+  .example-card {
+    @apply bg-card rounded-xl border border-primary/20 p-5 transition-all duration-300;
+    @apply hover:border-primary/40 hover:shadow-md;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(187 85% 53%) 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }
