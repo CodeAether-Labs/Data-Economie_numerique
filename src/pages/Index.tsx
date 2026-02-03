@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 import WhyDataSection from "@/components/WhyDataSection";
 import ImageBannerSection from "@/components/ImageBannerSection";
@@ -31,13 +32,19 @@ const Index = () => {
       <ChallengesSection />
       
       {/* Footer */}
-      <footer className="section-dark py-8 px-4 border-t border-border/20">
+      <motion.footer 
+        className="section-dark py-8 px-4 border-t border-border/20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="container max-w-6xl mx-auto text-center">
           <p className="text-primary-foreground/60 text-sm">
             © 2026 — Les Données au Cœur de l'Économie Numérique
           </p>
         </div>
-      </footer>
+      </motion.footer>
     </main>
   );
 };
