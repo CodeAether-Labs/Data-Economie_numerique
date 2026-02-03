@@ -6,7 +6,8 @@ import DataRoleSection from "@/components/DataRoleSection";
 import ExamplesSection from "@/components/ExamplesSection";
 import TechnologiesSection from "@/components/TechnologiesSection";
 import ChallengesSection from "@/components/ChallengesSection";
-
+import SocietyImpactSection from "@/components/SocietyImpactSection";
+import ConclusionSection from "@/components/ConclusionSection";
 const Index = () => {
   return (
     <main className="min-h-screen">
@@ -30,6 +31,12 @@ const Index = () => {
       
       {/* Challenges - Dark background */}
       <ChallengesSection />
+      
+      {/* Society Impact - Light background */}
+      <SocietyImpactSection />
+      
+      {/* Conclusion - Dark background */}
+      <ConclusionSection />
       
       {/* Footer */}
       <motion.footer 
