@@ -1,4 +1,6 @@
 import { ShoppingCart, Users, CreditCard, LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
+import AnimatedCard from "./AnimatedCard";
 
 interface ExampleCardProps {
   icon: LucideIcon;
@@ -9,9 +11,13 @@ interface ExampleCardProps {
 const ExampleCard = ({ icon: Icon, title, description }: ExampleCardProps) => {
   return (
     <div className="example-card flex items-start gap-4">
-      <div className="icon-container icon-blue flex-shrink-0">
+      <motion.div 
+        className="icon-container icon-blue flex-shrink-0"
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        transition={{ type: "spring", stiffness: 400 }}
+      >
         <Icon className="w-5 h-5" />
-      </div>
+      </motion.div>
       <div>
         <h3 className="font-bold text-foreground mb-2">{title}</h3>
         <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
@@ -40,27 +46,40 @@ const examples = [
 
 const ExamplesSection = () => {
   return (
-    <section className="section-light py-20 px-4">
+    <section className="section-light py-20 px-4 overflow-hidden">
       <div className="container max-w-5xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-3xl">📌</span>
+            <motion.span 
+              className="text-3xl"
+              animate={{ rotate: [0, 10, -10, 0] }}
+              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 4 }}
+            >
+              📌
+            </motion.span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Exemples concrets
             </h2>
           </div>
-        </div>
+        </motion.div>
 
         {/* Example Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {examples.map((example, index) => (
-            <ExampleCard
-              key={index}
-              icon={example.icon}
-              title={example.title}
-              description={example.description}
-            />
+            <AnimatedCard key={index} index={index}>
+              <ExampleCard
+                icon={example.icon}
+                title={example.title}
+                description={example.description}
+              />
+            </AnimatedCard>
           ))}
         </div>
       </div>
