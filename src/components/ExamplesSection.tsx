@@ -1,4 +1,4 @@
-import { ShoppingCart, Users, CreditCard, LucideIcon } from "lucide-react";
+import { ShoppingCart, Users, CreditCard, Activity, LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedCard from "./AnimatedCard";
 
@@ -30,18 +30,27 @@ const examples = [
   {
     icon: ShoppingCart,
     title: "E-commerce",
-    description: "Amazon, Alibaba : recommandations personnalisées basées sur l'historique d'achat"
+    description:
+      "Les places de marché agrègent historiques d'achat, paniers abandonnés et avis pour proposer des recommandations, des promotions ciblées et une gestion des stocks en quasi temps réel. La donnée structure aussi la logistique du dernier kilomètre.",
   },
   {
     icon: Users,
     title: "Réseaux sociaux",
-    description: "Facebook, Instagram : ciblage publicitaire ultra-précis grâce aux données utilisateurs"
+    description:
+      "Les contenus consommés, le temps passé et le graphe social nourrissent des modèles de recommandation et de publicité. Le ciblage repose sur des profils d'intérêt, avec des débats récurrents sur la transparence, la modération et la protection des mineurs.",
   },
   {
     icon: CreditCard,
-    title: "Fintech",
-    description: "PayPal, Stripe : détection de fraude et scoring de crédit en temps réel"
-  }
+    title: "Fintech & banque",
+    description:
+      "Paiement, scoring de crédit et détection de fraude s'appuient sur des transactions, des signaux comportementaux et des listes de risque. Les régulateurs exigent traçabilité et explicabilité croissantes des modèles d'aide à la décision.",
+  },
+  {
+    icon: Activity,
+    title: "Santé & industrie",
+    description:
+      "Imagerie médicale, suivi de cohortes, maintenance d'usine : capteurs et dossiers patients alimentent recherche et efficacité opérationnelle, sous contrainte forte de confidentialité (données sensibles, hébergement, anonymisation).",
+  },
 ];
 
 const ExamplesSection = () => {
@@ -56,22 +65,20 @@ const ExamplesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <motion.span 
-              className="text-3xl"
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 4 }}
-            >
-              📌
-            </motion.span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Exemples concrets
-            </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+            Quels exemples dans l&apos;économie numérique ?
+          </h2>
+          <div className="text-muted-foreground text-center max-w-3xl mx-auto text-lg space-y-3">
+            <p>
+              Quels secteurs illustrent le mieux la donnée comme avantage concurrentiel ou risque
+              réputationnel ? Voici quatre familles d&apos;usage, avec des logiques de collecte et
+              de régulation différentes.
+            </p>
           </div>
         </motion.div>
 
         {/* Example Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {examples.map((example, index) => (
             <AnimatedCard key={index} index={index}>
               <ExampleCard

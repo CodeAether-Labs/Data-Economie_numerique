@@ -8,25 +8,29 @@ const features = [
   {
     icon: Globe,
     title: "Explosion du numérique",
-    description: "Internet et les technologies numériques se sont généralisés à l'échelle mondiale",
+    description:
+      "Plus de la moitié de l'humanité est connectée ; chaque recherche, transaction ou géolocalisation laisse une trace exploitable. La généralisation d'Internet et du mobile crée un volume et une diversité de données sans précédent, socle de l'économie de plateformes.",
     iconColorClass: "icon-blue"
   },
   {
     icon: Smartphone,
     title: "Généralisation des smartphones",
-    description: "Des milliards d'utilisateurs connectés génèrent des données en continu",
+    description:
+      "Les terminaux personnels multiplient les capteurs (localisation, usage, santé) et les canaux de collecte. Les usages quotidiens génèrent des flux continus, souvent en temps réel, qui alimentent publicité, mobilité et services publics numériques.",
     iconColorClass: "icon-blue"
   },
   {
     icon: Building2,
     title: "Digitalisation des entreprises",
-    description: "Les organisations adoptent massivement les outils numériques",
+    description:
+      "ERP, CRM, e-commerce et outils collaboratifs standardisent la donnée d'entreprise. La traçabilité des opérations permet d'optimiser stocks, maintenance prédictive et relation client — la donnée devient un levier direct de productivité et de qualité.",
     iconColorClass: "icon-blue"
   },
   {
     icon: Zap,
     title: "Accélération technologique",
-    description: "L'innovation numérique s'accélère de manière exponentielle",
+    description:
+      "La baisse du coût du stockage, la montée en puissance du calcul (cloud, GPU) et les progrès de l'IA rendent l'exploitation de gros volumes accessible. L'innovation s'enchaîne : ce qui était expérimental devient produit en quelques années.",
     iconColorClass: "icon-blue"
   }
 ];
@@ -44,18 +48,22 @@ const WhyDataSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Pourquoi les données sont essentielles aujourd'hui
+            Pourquoi la donnée est-elle centrale ?
           </motion.h2>
-          <motion.p 
-            className="text-muted-foreground max-w-3xl mx-auto text-lg"
+          <motion.div 
+            className="text-muted-foreground max-w-3xl mx-auto text-lg space-y-3 text-left md:text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            À notre ère, plusieurs facteurs contribuent à l'importance cruciale des données 
-            dans l'économie numérique
-          </motion.p>
+            <p>
+              La donnée n&apos;est pas qu&apos;un résidu technique : elle devient une ressource
+              économique mobilisable (analyse, revente de services, avantage concurrentiel). Quatre
+              dynamiques majeures expliquent pourquoi elle occupe aujourd&apos;hui le centre du
+              débat sur l&apos;économie numérique.
+            </p>
+          </motion.div>
         </AnimatedSection>
 
         {/* Feature Cards Grid */}

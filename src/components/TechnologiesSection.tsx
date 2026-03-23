@@ -1,6 +1,5 @@
 import { Database, Brain, Cloud, Wifi, LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import aiChipImage from "@/assets/ai-chip.jpg";
 import AnimatedCard from "./AnimatedCard";
 
 interface TechCardProps {
@@ -34,25 +33,29 @@ const technologies = [
   {
     icon: Database,
     title: "Big Data",
-    description: "Capacité à traiter et analyser d'immenses volumes de données pour en extraire de la valeur",
+    description:
+      "Frameworks distribués (type Hadoop/Spark dans l'écosystème open source) permettent de traiter des pétaoctets hors mémoire vive unique. L'enjeu n'est plus seulement de stocker, mais de gouverner la qualité, la lignée des données et les accès conformes au RGPD.",
     gradientClass: "icon-pink"
   },
   {
     icon: Brain,
     title: "Intelligence Artificielle",
-    description: "Algorithmes d'apprentissage automatique qui exploitent les données pour prédire et décider",
+    description:
+      "Apprentissage supervisé, non supervisé et modèles génératifs s'entraînent sur des corpus étiquetés ou non. La performance dépend autant des données (biais, représentativité) que de l'architecture — d'où l'importance des jeux de données documentés et auditables.",
     gradientClass: "icon-blue"
   },
   {
     icon: Cloud,
     title: "Cloud Computing",
-    description: "Infrastructure distribuée permettant le stockage et le traitement massif des données",
+    description:
+      "Le cloud offre elasticité et mutualisation : on ajuste les ressources au volume traité. Les modèles SaaS et les API facilitent l'industrialisation des pipelines de données, au prix d'une dépendance aux fournisseurs et de questions de localisation des données.",
     gradientClass: "icon-cyan"
   },
   {
     icon: Wifi,
     title: "Internet des Objets (IoT)",
-    description: "Milliards d'appareils connectés générant des flux continus de données en temps réel",
+    description:
+      "Capteurs industriels, véhicules connectés ou objets domestiques émettent des flux haute fréquence. La valeur naît du croisement avec d'autres sources (météo, stocks), mais la surface d'attaque cyber et la vie privée exigent sécurisation et minimisation des données.",
     gradientClass: "icon-orange"
   }
 ];
@@ -70,15 +73,20 @@ const TechnologiesSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Données et technologies émergentes
+            Quelles technologies pour exploiter la donnée ?
           </h2>
-          <p className="text-primary-foreground/70 max-w-3xl mx-auto text-lg">
-            Les technologies de pointe reposent toutes sur un socle commun : les données
-          </p>
+          <div className="text-primary-foreground/75 max-w-3xl mx-auto text-lg space-y-3">
+            <p>
+              Ces familles technologiques ne sont pas indépendantes : l&apos;IoT alimente le big data,
+              le big data nourrit l&apos;IA, et le cloud rend l&apos;ensemble scalable. Comprendre leurs
+              interactions aide à situer où se prennent les décisions d&apos;investissement et où
+              apparaissent les verrous (compétences, énergie, souveraineté).
+            </p>
+          </div>
         </motion.div>
 
         {/* Tech Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {technologies.map((tech, index) => (
             <AnimatedCard key={index} index={index}>
               <TechCard
@@ -91,21 +99,11 @@ const TechnologiesSection = () => {
           ))}
         </div>
 
-        {/* AI Chip Image */}
-        <motion.div 
-          className="rounded-2xl overflow-hidden shadow-2xl"
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          whileHover={{ scale: 1.02 }}
-        >
-          <img 
-            src={aiChipImage} 
-            alt="Puce IA sur circuit imprimé" 
-            className="w-full h-auto object-cover"
-          />
-        </motion.div>
+        <p className="text-center text-primary-foreground/55 text-sm mt-10 max-w-3xl mx-auto leading-relaxed border-t border-primary-foreground/10 pt-8">
+          La puissance de calcul et la miniaturisation des puces rendent possibles l&apos;inférence
+          embarquée et les centres de données à grande échelle — le même type d&apos;infrastructure
+          que celui illustré plus haut avec la photographie du circuit.
+        </p>
       </div>
     </section>
   );

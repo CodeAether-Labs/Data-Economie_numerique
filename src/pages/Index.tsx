@@ -48,7 +48,7 @@ const Index = () => {
       >
         <div className="container max-w-6xl mx-auto text-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2026 — Les Données au Cœur de l'Économie Numérique
+            © 2026 — Données et économie numérique
           </p>
         </div>
       </motion.footer>

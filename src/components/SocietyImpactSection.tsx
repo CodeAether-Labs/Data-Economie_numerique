@@ -7,10 +7,11 @@ interface ImpactCardProps {
   title: string;
   description: string;
   projection: string;
+  projectionSource?: string;
   accentColor: "blue" | "purple";
 }
 
-const ImpactCard = ({ icon, title, description, projection, accentColor }: ImpactCardProps) => {
+const ImpactCard = ({ icon, title, description, projection, projectionSource, accentColor }: ImpactCardProps) => {
   const borderColor = accentColor === "blue" ? "bg-icon-blue" : "bg-icon-purple";
   const bgColor = accentColor === "blue" ? "bg-icon-blue/10" : "bg-icon-purple/10";
   
@@ -33,9 +34,12 @@ const ImpactCard = ({ icon, title, description, projection, accentColor }: Impac
       {/* Projection box */}
       <div className={`${bgColor} rounded-lg p-4 mb-4`}>
         <p className="text-sm">
-          <span className="font-semibold text-foreground">Projection:</span>{" "}
+          <span className="font-semibold text-foreground">Indicateur prospectif :</span>{" "}
           <span className="text-muted-foreground">{projection}</span>
         </p>
+        {projectionSource ? (
+          <p className="text-xs text-muted-foreground/90 mt-2 leading-snug">{projectionSource}</p>
+        ) : null}
       </div>
       
       <div className="border-t border-border pt-4">
@@ -55,15 +59,23 @@ const impacts = [
   {
     icon: <Briefcase className="w-6 h-6" />,
     title: "Nouveaux métiers",
-    description: "Data scientist, analyste de données, expert en cybersécurité, éthicien de l'IA...",
-    projection: "97 millions nouveaux emplois data d'ici 2027",
+    description:
+      "Ingénieur données, analyste décisionnel, architecte cloud, spécialiste de la conformité (DPO), prompt engineer : les fiches métiers se multiplient. La demande de compétences hybrides — métier + données + éthique — pousse à réformer les cursus et la formation continue.",
+    projection:
+      "Ordre de grandeur souvent cité : des dizaines de millions d'emplois liés aux données et à l'IA à l'horizon 2025-2030 selon les rapports prospectifs du secteur.",
+    projectionSource:
+      "Les chiffres varient selon les définitions (emplois « purs » data vs emplois transformés). À lire comme une tendance, pas comme une prévision figée.",
     accentColor: "blue" as const
   },
   {
     icon: <RefreshCw className="w-6 h-6" />,
     title: "Transformation du travail",
-    description: "Télétravail, automatisation, collaboration numérique et nouveaux modes d'organisation",
-    projection: "70% des emplois transformés par le numérique d'ici 2030",
+    description:
+      "Automatisation des tâches répétitives, copilotes IA dans les bureaux, télétravail et travail hybride : l'organisation du travail s'ajuste. La question n'est plus seulement « qui embauche ? » mais « quelles tâches sont déléguées aux systèmes ? » et comment requalifier les équipes.",
+    projection:
+      "Les instituts et forums économiques estiment qu'une large part des emplois subira un changement de contenu sous l'effet du numérique d'ici 2030 — avec des effets très inégaux selon les secteurs.",
+    projectionSource:
+      "Ces projections dépendent du rythme d'adoption des outils et des politiques publiques (formation, dialogue social).",
     accentColor: "purple" as const
   }
 ];
@@ -81,11 +93,16 @@ const SocietyImpactSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Impact sur la société et l'avenir
+            Quel impact sur la société et le travail ?
           </h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto text-lg mb-8">
-            Les données redéfinissent notre société et façonnent le monde de demain
-          </p>
+          <div className="text-muted-foreground max-w-3xl mx-auto text-lg mb-8 space-y-3">
+            <p>
+              La diffusion des données et des outils d&apos;analyse modifie les contenus de poste plus
+              vite que les intitulés. Les projections ci-dessous sont des ordres de grandeur
+              fréquemment mobilisés dans les rapports — utiles pour le débat, à relativiser selon les
+              sources et les méthodes.
+            </p>
+          </div>
           
           <motion.button
             className="inline-flex items-center gap-2 px-6 py-3 border border-icon-blue text-icon-blue rounded-full hover:bg-icon-blue/10 transition-colors"
@@ -106,6 +123,7 @@ const SocietyImpactSection = () => {
                 title={impact.title}
                 description={impact.description}
                 projection={impact.projection}
+                projectionSource={impact.projectionSource}
                 accentColor={impact.accentColor}
               />
             </AnimatedCard>
